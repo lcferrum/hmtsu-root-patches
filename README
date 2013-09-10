@@ -1,4 +1,27 @@
-hmtsu-root-patches
-==================
+Root patches based on HMTsu
 
-Root patches (based on HMTsu) for various Harmattan apps
+1. License
+----------
+Copyright (c) 2013 Lcferrum
+
+This program comes with no warranty.
+You must use this program at your own risk.
+Licensed under BSD license - see LICENSE file for details.
+
+2. About
+--------
+This is a collection of root patches for various Harmattan apps.
+
+3. Where to get
+---------------
+Main project homepage is at GitHub:
+
+	https://github.com/lcferrum/hmtsu-root-patches
+
+4. Usage
+--------
+TBD
+
+5. Building
+-----------
+TBD
