@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Rooted TxPad
+Icon=/usr/share/icons/hicolor/80x80/apps/txpad.png
+Exec=
+Type=Application
+Terminal=false
+X-HildonDesk-ShowInToolbar=true
+X-Osso-Type=application/x-executable
+

@@ -1,4 +1,4 @@
-Source: filecase-rooted
+Source: txpadqml-rooted
 Section: user/other
 Priority: optional
 Maintainer: Lcferrum <lcferrum@yandex.com>
@@ -6,10 +6,10 @@ Build-Depends: debhelper (>= 7), aegis-builder (>= 1.4), pkg-config
 Standards-Version: 3.8.4
 Homepage: https://github.com/lcferrum/hmtsu-root-patches
 
-Package: filecase-rooted
+Package: txpadqml-rooted
 Architecture: armel
-Depends: hmtsu (>= 0.1.0), filecase (>= 0.1.9)
+Depends: hmtsu (>= 0.1.0), txpadqml (>= 0.5.5)
 Section: user/other
 Priority: optional
-Description: This patch allows to run FileCase app with root privileges.
-XB-Maemo-Display-Name: Root patch for FileCase
+Description: This patch allows to run TxPad app with root privileges.
+XB-Maemo-Display-Name: Root patch for TxPad
