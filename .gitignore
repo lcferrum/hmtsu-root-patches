@@ -1,0 +1,10 @@
+# Binaries
+*.deb
+*.changes
+*.tar.gz
+*.dsc
+
+# Buildpackage files
+*.log
+*.substvars
+files
