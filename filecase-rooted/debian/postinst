@@ -6,7 +6,7 @@ fn_if_package_aegised() {
 	if [ -f $1 ]
 	then
 		OUTPUT=$( awk "/^Package: $2$/{getline; print;}" $1 )
-		if [ "$OUTPUT" = "Source: com.nokia.maemo/local" ]
+		if [ "$OUTPUT" = "Source: com.nokia.maemo/local" -o "$OUTPUT" = "Source: com.nokia.maemo" ]
 		then
 			return 0
 		else
