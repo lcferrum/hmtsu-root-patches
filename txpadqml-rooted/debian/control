@@ -8,7 +8,7 @@ Homepage: https://github.com/lcferrum/hmtsu-root-patches
 
 Package: txpadqml-rooted
 Architecture: armel
-Depends: hmtsu (>= 0.1.0), txpadqml (>= 0.5.5), busybox-devel-su | opensudo | inception-bin (>= 0.2.0)
+Depends: hmtsu (>= 0.1.0), txpadqml (>= 0.5.5), busybox-devel-su
 Section: user/other
 Priority: optional
 Description: This patch allows to run TxPad app with root privileges.
