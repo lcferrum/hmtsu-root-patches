@@ -22,7 +22,7 @@ RESTOK="/var/lib/aegis/restok/restok.conf"
 fn_if_package_aegised $RESTOK "txpadqml"
 if [ $? = 0 ]
 then 
-	echo "txpadqml is AEGISED"
+	echo "txpadqml-rooted: txpadqml is AEGISED"
 	if [ -f "/usr/bin/ariadne" ]
 	then
 		CMDPART="--ariadne-mode -- sh -c"
@@ -36,7 +36,7 @@ then
 		fi
 	fi
 else
-	echo "txpadqml is NOT aegised"
+	echo "txpadqml-rooted: txpadqml is NOT aegised"
 	CMDPART="--su-mode"
 fi
 

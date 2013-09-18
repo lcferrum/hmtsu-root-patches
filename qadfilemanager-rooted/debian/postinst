@@ -22,7 +22,7 @@ RESTOK="/var/lib/aegis/restok/restok.conf"
 fn_if_package_aegised $RESTOK "qadfilemanager"
 if [ $? = 0 ]
 then 
-	echo "qadfilemanager is AEGISED"
+	echo "qadfilemanager-rooted: qadfilemanager is AEGISED"
 	if [ -f "/usr/bin/ariadne" ]
 	then
 		CMDPART="--ariadne-mode"
@@ -36,7 +36,7 @@ then
 		fi
 	fi
 else
-	echo "qadfilemanager is NOT aegised"
+	echo "qadfilemanager-rooted: qadfilemanager is NOT aegised"
 	CMDPART="--su-mode"
 fi
 

@@ -22,7 +22,7 @@ RESTOK="/var/lib/aegis/restok/restok.conf"
 fn_if_package_aegised $RESTOK "myexplorer-itc"
 if [ $? = 0 ]
 then 
-	echo "myexplorer-itc is AEGISED"
+	echo "myexplorer-itc-rooted: myexplorer-itc is AEGISED"
 	if [ -f "/usr/bin/ariadne" ]
 	then
 		CMDPART="--ariadne-mode"
@@ -36,7 +36,7 @@ then
 		fi
 	fi
 else
-	echo "myexplorer-itc is NOT aegised"
+	echo "myexplorer-itc-rooted: myexplorer-itc is NOT aegised"
 	CMDPART="--su-mode"
 fi
 

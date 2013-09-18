@@ -22,7 +22,7 @@ RESTOK="/var/lib/aegis/restok/restok.conf"
 fn_if_package_aegised $RESTOK "filecase"
 if [ $? = 0 ]
 then 
-	echo "filecase is AEGISED"
+	echo "filecase-rooted: filecase is AEGISED"
 	if [ -f "/usr/bin/ariadne" ]
 	then
 		CMDPART="--ariadne-mode"
@@ -36,7 +36,7 @@ then
 		fi
 	fi
 else
-	echo "filecase is NOT aegised"
+	echo "filecase-rooted: filecase is NOT aegised"
 	CMDPART="--su-mode"
 fi
 

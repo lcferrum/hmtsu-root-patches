@@ -22,7 +22,7 @@ RESTOK="/var/lib/aegis/restok/restok.conf"
 fn_if_package_aegised $RESTOK "meetexteditor"
 if [ $? = 0 ]
 then 
-	echo "meetexteditor is AEGISED"
+	echo "meetexteditor-rooted: meetexteditor is AEGISED"
 	if [ -f "/usr/bin/ariadne" ]
 	then
 		CMDPART="--ariadne-mode"
@@ -36,7 +36,7 @@ then
 		fi
 	fi
 else
-	echo "meetexteditor is NOT aegised"
+	echo "meetexteditor-rooted: meetexteditor is NOT aegised"
 	CMDPART="--su-mode"
 fi
 
