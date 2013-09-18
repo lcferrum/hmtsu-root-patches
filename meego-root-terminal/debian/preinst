@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# $1 - restok.conf path
+# $2 - package name
+fn_if_package_aegised() {
+	if [ -f $1 ]
+	then
+		OUTPUT=$( awk "/^Package: $2$/{getline; print;}" $1 )
+		if [ "$OUTPUT" = "Source: com.nokia.maemo/local" -o "$OUTPUT" = "Source: com.nokia.maemo" ]
+		then
+			return 0
+		else
+			return 1
+		fi
+	else
+		return 2
+	fi
+}
+
+RESTOK="/var/lib/aegis/restok/restok.conf"
+
+if [ -f "/usr/bin/ariadne" ]
+then
+	return 0
+else
+	echo "meego-root-terminal: ariadne not found - checking opensudo"
+	fn_if_package_aegised $RESTOK "opensudo"
+	if [ $? = 0 ]
+	then 
+		return 0
+	else
+		echo "meego-root-terminal: opensudo has no aegised privileges - aborting installation"
+		return 1
+	fi
+fi

@@ -8,7 +8,7 @@ Homepage: https://github.com/lcferrum/hmtsu-root-patches
 
 Package: qadfilemanager-rooted
 Architecture: armel
-Depends: hmtsu (>= 0.1.0), qadfilemanager (>= 1.1.16)
+Depends: hmtsu (>= 0.1.0), qadfilemanager (>= 1.1.16), busybox-devel-su | opensudo | inception-bin (>= 0.2.0)
 Section: user/other
 Priority: optional
 Description: This patch allows to run QAD File Manager app with root privileges.

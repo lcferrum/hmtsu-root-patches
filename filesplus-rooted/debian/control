@@ -8,7 +8,7 @@ Homepage: https://github.com/lcferrum/hmtsu-root-patches
 
 Package: filesplus-rooted
 Architecture: armel
-Depends: hmtsu (>= 0.1.0), filesplus (>= 1.2.3)
+Depends: hmtsu (>= 0.1.0), filesplus (>= 1.2.3), busybox-devel-su | opensudo | inception-bin (>= 0.2.0)
 Section: user/other
 Priority: optional
 Description: This patch allows to run FilesPlus app with root privileges.
