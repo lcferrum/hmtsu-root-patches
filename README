@@ -10,10 +10,18 @@ Licensed under BSD license - see LICENSE file for details.
 
 2. About
 --------
-This is a collection of root patches for various Harmattan apps.
+This is a collection of root patches for various Harmattan apps. Patches add
+separate launch icon (.desktop file) for the selected app that launches it with
+root privileges using HMTsu. The way it will be launched depends on whether app
+was installed with aegis privileges ...
 
 3. Where to get
 ---------------
+You can build .deb packages by yourself (refer to 'Building' section) or 
+download ready-made patches from Sourceforge:
+
+	https://sourceforge.net/projects/hmtsu/files/hmtsu-root-patches/
+	
 Main project homepage is at GitHub:
 
 	https://github.com/lcferrum/hmtsu-root-patches
@@ -24,4 +32,12 @@ TBD
 
 5. Building
 -----------
-TBD
+The easiest way to build each of the patches is by using MeeGo 1.2 Harmattan
+Platform SDK provided by Nokia. Just make sure that you have installed Platform
+SDK correctly, start scratchbox, select HARMATTAN_ARMEL target, switch to one
+of the patch directories and type:
+
+	dpkg-buildpackage -rfakeroot
+
+You can also use other means of building .deb packages but they are not
+supported by the current distribution.
