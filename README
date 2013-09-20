@@ -13,7 +13,9 @@ Licensed under BSD license - see LICENSE file for details.
 This is a collection of root patches for various Harmattan apps. Patches add
 separate launch icon (.desktop file) for the selected app that launches it with
 root privileges using HMTsu. The way it will be launched depends on whether app
-was installed with aegis privileges ...
+was installed using trusted origin (with incept, aegis-install or in open mode
+with "AEGIS_FIXED_ORIGIN=com.nokia.maemo") and what user substitute tools are
+available.
 
 3. Where to get
 ---------------
@@ -28,7 +30,14 @@ Main project homepage is at GitHub:
 
 4. Usage
 --------
-TBD
+Install .deb file with patch on your device (don't forget to allow installation
+from non-Store sources in the Settings and install HMTsu beforehand). New
+"rooted" launch icon will appear on your application screen. Use this icon to
+launch corresponding app with root priveleges using HMTsu.
+
+If you have added/removed user substitute tools, reinstalled target app to use
+trusted to origin - just reapply the patch so that HMTsu launch method will be
+adjusted to new environment.
 
 5. Building
 -----------
