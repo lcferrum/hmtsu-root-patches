@@ -32,7 +32,7 @@ Main project homepage is at GitHub:
 --------
 Install .deb file with patch on your device (don't forget to allow installation
 from non-Store sources in the Settings and install HMTsu beforehand). New
-"rooted" launch icon will appear on your application screen. Use this icon to
+"rooted" launch icon will appear on your application screen. Click this icon to
 launch corresponding app with root priveleges using HMTsu.
 
 If you have added/removed user substitute tools, reinstalled target app to use
