@@ -36,7 +36,7 @@ from non-Store sources in the Settings and install HMTsu beforehand). New
 launch corresponding app with root priveleges using HMTsu.
 
 If you have added/removed user substitute tools, reinstalled target app to use
-trusted to origin - just reapply the patch so that HMTsu launch method will be
+trusted origin - just reapply the patch so that HMTsu launch method will be
 adjusted to new environment.
 
 5. Building
