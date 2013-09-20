@@ -5,5 +5,4 @@ Name=Root Terminal
 Icon=icon-l-terminal
 Exec=
 Type=Application
-Terminal=false
-Categories=Development
+Categories=Development;
