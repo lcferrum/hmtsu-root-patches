@@ -14,7 +14,7 @@ This is a collection of root patches for various Harmattan apps. Patches add
 separate launch icon (.desktop file) for the selected app that launches it with
 root privileges using HMTsu. The way it will be launched depends on whether app
 was installed using trusted origin (with incept, aegis-install or in open mode
-with "AEGIS_FIXED_ORIGIN=com.nokia.maemo") and what user substitute tools are
+with 'AEGIS_FIXED_ORIGIN=com.nokia.maemo') and what user substitute tools are
 available.
 
 3. Where to get
@@ -39,7 +39,19 @@ If you have added/removed user substitute tools, reinstalled target app to use
 trusted origin - just reapply the patch so that HMTsu launch method will be
 adjusted to new environment.
 
-5. Building
+5. Additional notes
+-------------------
+By default Aegis constraints root account on N9 so it does not have full
+unrestricted access to system resources. To elevate this limitation you should
+install the app, which you want to use under root account, using trusted origin
+and have ariadne or opensudo installed to run it. Root patches automatically
+detect if these conditions were met and will launch the app in appropriate way.
+
+Meego Root Terminal patch works only if opensudo or ariadne was installed
+(Meego Terminal has trusted origin by default). It's because Meego Terminal
+can't be run under root account limited by Aegis (that is, with devel-su).
+
+6. Building
 -----------
 The easiest way to build each of the patches is by using MeeGo 1.2 Harmattan
 Platform SDK provided by Nokia. Just make sure that you have installed Platform
