@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ -f "/usr/bin/ariadne" ]
+then
+	CMDPART="--ariadne-mode"
+else
+	CMDPART="--sudo-mode -l"
+fi
+
+COMMAND="Exec=invoker --type=d hmtsu $CMDPART -D /usr/share/applications/mtermite.desktop -- /opt/mtermite/bin/mtermite -n"
+
+sed "s,^Exec=.*,$COMMAND," /usr/share/applications/mtermite-rooted.desktop > /usr/share/applications/mtermite-rooted.tmp
+mv /usr/share/applications/mtermite-rooted.tmp /usr/share/applications/mtermite-rooted.desktop
+
