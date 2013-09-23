@@ -47,10 +47,10 @@ install the app, which you want to use under root account, using trusted origin
 and have ariadne or opensudo installed to run it. Root patches automatically
 detect if these conditions were met and will launch the app in appropriate way.
 
-Terminal patches work only if target apps have trusted origin (Meego Terminal
-has trusted origin by default) and opensudo or ariadne was installed. It's
-because terminal-like apps can't be run under root account limited by Aegis
-(that is, with devel-su).
+Patches for terminal-like apps work only if target has trusted origin (Meego
+Terminal has trusted origin by default) and opensudo or ariadne was installed.
+It's because terminal-like apps can't be run under root account limited by
+Aegis (that is, with devel-su).
 
 All the patches prefer to use ariadne over opensudo: it is necessary to use
 opensudo with login shell to run most Harmattan apps, which in turn can
