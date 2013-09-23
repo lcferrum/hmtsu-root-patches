@@ -48,7 +48,7 @@ detect if these conditions were met and will launch the app in appropriate way.
 
 Trusted origin for particular app can be achieved by installing it with incept,
 aegis-install or in open mode with 'AEGIS_FIXED_ORIGIN=com.nokia.maemo'. This
-step can be automated with Debinstaller app (though it doesn't support incept
+step can be automated with Debinstaller app (though it doesn't support incepted
 installation).
 
 Patches for terminal-like apps work only if target has trusted origin (Meego
