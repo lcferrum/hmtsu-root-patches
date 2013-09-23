@@ -13,9 +13,8 @@ Licensed under BSD license - see LICENSE file for details.
 This is a collection of root patches for various Harmattan apps. Patches add
 separate launch icon (.desktop file) for the selected app that launches it with
 root privileges using HMTsu. The way it will be launched depends on whether app
-was installed using trusted origin (with incept, aegis-install or in open mode
-with 'AEGIS_FIXED_ORIGIN=com.nokia.maemo') and what user substitute tools are
-available.
+was installed using trusted origin and what user substitute tools are
+available at the moment.
 
 3. Where to get
 ---------------
@@ -46,6 +45,11 @@ unrestricted access to system resources. To elevate this limitation you should
 install the app, which you want to use under root account, using trusted origin
 and have ariadne or opensudo installed to run it. Root patches automatically
 detect if these conditions were met and will launch the app in appropriate way.
+
+Trusted origin for particular app can be achieved by installing it with incept,
+aegis-install or in open mode with 'AEGIS_FIXED_ORIGIN=com.nokia.maemo'. This
+step can be automated with Debinstaller app (though it doesn't support incept
+installation).
 
 Patches for terminal-like apps work only if target has trusted origin (Meego
 Terminal has trusted origin by default) and opensudo or ariadne was installed.
