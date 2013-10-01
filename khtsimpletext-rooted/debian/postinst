@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# $1 - restok.conf path
+# $2 - package name
+fn_if_package_aegised() {
+	if [ -f $1 ]
+	then
+		OUTPUT=$( awk "/^Package: $2$/{getline; print;}" $1 )
+		if [ "$OUTPUT" = "Source: com.nokia.maemo/local" -o "$OUTPUT" = "Source: com.nokia.maemo" ]
+		then
+			return 0
+		else
+			return 1
+		fi
+	else
+		return 2
+	fi
+}
+
+RESTOK="/var/lib/aegis/restok/restok.conf"
+
+fn_if_package_aegised $RESTOK "khtsimpletext"
+if [ $? = 0 ]
+then 
+	echo "khtsimpletext-rooted: khtsimpletext is AEGISED"
+	if [ -f "/usr/bin/ariadne" ]
+	then
+		CMDPART="--ariadne-mode"
+	else
+		fn_if_package_aegised $RESTOK "opensudo"
+		if [ $? = 0 ]
+		then 
+			CMDPART="--sudo-mode -l"
+		else
+			CMDPART="--su-mode"
+		fi
+	fi
+else
+	echo "khtsimpletext-rooted: khtsimpletext is NOT aegised"
+	CMDPART="--su-mode"
+fi
+
+COMMAND="Exec=invoker --type=d hmtsu $CMDPART -D /usr/share/applications/khtsimpletext.desktop /opt/khtsimpletext/__init__.py"
+
+sed "s,^Exec=.*,$COMMAND," /usr/share/applications/khtsimpletext-rooted.desktop > /usr/share/applications/khtsimpletext-rooted.tmp
+mv /usr/share/applications/khtsimpletext-rooted.tmp /usr/share/applications/khtsimpletext-rooted.desktop
+
