@@ -8,7 +8,7 @@ Homepage: https://github.com/lcferrum/hmtsu-root-patches
 
 Package: cuteexplorer-rooted
 Architecture: armel
-Depends: hmtsu (>= 0.1.1), cuteexplorer (>= 0.0.20110815), busybox-devel-su
+Depends: hmtsu (>= 0.1.1), cuteexplorer, busybox-devel-su
 Section: user/other
 Priority: optional
 Description: This patch allows to run CuteExplorer app with root privileges.
