@@ -1,0 +1,15 @@
+Source: minifile-rooted
+Section: user/other
+Priority: optional
+Maintainer: Lcferrum <lcferrum@yandex.com>
+Build-Depends: debhelper (>= 7), aegis-builder (>= 1.4), pkg-config
+Standards-Version: 3.8.4
+Homepage: https://github.com/lcferrum/hmtsu-root-patches
+
+Package: minifile-rooted
+Architecture: armel
+Depends: hmtsu (>= 0.1.1), minifile, busybox-devel-su
+Section: user/other
+Priority: optional
+Description: This patch allows to run minifile app with root privileges.
+XB-Maemo-Display-Name: Root patch for minifile
