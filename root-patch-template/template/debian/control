@@ -1,0 +1,15 @@
+Source: template_patch_pname
+Section: user/other
+Priority: optional
+Maintainer: Lcferrum <lcferrum@yandex.com>
+Build-Depends: debhelper (>= 7), aegis-builder (>= 1.4), pkg-config
+Standards-Version: 3.8.4
+Homepage: https://github.com/lcferrum/hmtsu-root-patches
+
+Package: template_patch_pname
+Architecture: armel
+Depends: hmtsu (>= 0.1.1), template_app_pname (version), busybox-devel-su
+Section: user/other
+Priority: optional
+Description: This patch allows to run template_app_sname app with root privileges.
+XB-Maemo-Display-Name: Root patch for template_app_sname
