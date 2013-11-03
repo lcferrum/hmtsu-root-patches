@@ -10,17 +10,18 @@ DEB=$( readlink -f "$1" )
 WORKING_DIR=$( dirname "$DEB" )
 SCRIPT_DIR=$( dirname "$( readlink -f "$0" )" )
 
-dpkg-deb -x "$DEB" "$WORKING_DIR/unpacked_deb"
-dpkg-deb -e "$DEB" "$WORKING_DIR/unpacked_deb/DEBIAN"
+APP_PNAME=$( dpkg-deb -I "$DEB" | sed -n "s/^ Package: \(.*\)/\1/p" )
+UNPACKED_DEB="$APP_PNAME-unpacked"
+dpkg-deb -x "$DEB" "$WORKING_DIR/$UNPACKED_DEB"
+dpkg-deb -e "$DEB" "$WORKING_DIR/$UNPACKED_DEB/DEBIAN"
 
-APP_VERSION=$( sed -n "s/^Version: \(.*\)/\1/p" "$WORKING_DIR/unpacked_deb/DEBIAN/control" )
-APP_PNAME=$( sed -n "s/^Package: \(.*\)/\1/p" "$WORKING_DIR/unpacked_deb/DEBIAN/control" )
+APP_VERSION=$( sed -n "s/^Version: \(.*\)/\1/p" "$WORKING_DIR/$UNPACKED_DEB/DEBIAN/control" )
 PATCH_PNAME="$APP_PNAME-rooted"
-APP_DNAME=$( ls "$WORKING_DIR/unpacked_deb/usr/share/applications/" | sed -n "s/\(.*\)\.desktop/\1/p" )
+APP_DNAME=$( ls "$WORKING_DIR/$UNPACKED_DEB/usr/share/applications/" | sed -n "s/\(.*\)\.desktop/\1/p" )
 PATCH_DNAME="$APP_DNAME-rooted"
-APP_SNAME=$( sed -n "s/^Name=\(.*\)/\1/p" "$WORKING_DIR/unpacked_deb/usr/share/applications/$APP_DNAME.desktop" )
+APP_SNAME=$( sed -n "s/^Name=\(.*\)/\1/p" "$WORKING_DIR/$UNPACKED_DEB/usr/share/applications/$APP_DNAME.desktop" )
 PATCH_SNAME="Rooted $APP_SNAME"
-APP_ICON=$( sed -n "s/^Icon=\(.*\)/\1/p" "$WORKING_DIR/unpacked_deb/usr/share/applications/$APP_DNAME.desktop" )
+APP_ICON=$( sed -n "s/^Icon=\(.*\)/\1/p" "$WORKING_DIR/$UNPACKED_DEB/usr/share/applications/$APP_DNAME.desktop" )
 YEAR=$( date +"%Y" )
 
 mkdir -p "$WORKING_DIR/$PATCH_PNAME/"
@@ -40,7 +41,5 @@ sed -i "s/template_app_pname/$APP_PNAME/" "$WORKING_DIR/$PATCH_PNAME/debian/post
 sed -i "s/template_patch_pname/$PATCH_PNAME/" "$WORKING_DIR/$PATCH_PNAME/debian/postinst"
 sed -i "s/template_app_dname/$APP_DNAME/" "$WORKING_DIR/$PATCH_PNAME/debian/postinst"
 sed -i "s/template_patch_dname/$PATCH_DNAME/g" "$WORKING_DIR/$PATCH_PNAME/debian/postinst"
-
-rm -rf "$WORKING_DIR/unpacked_deb"
 
 
