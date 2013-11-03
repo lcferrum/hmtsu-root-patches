@@ -1,4 +1,4 @@
-#~/bin/sh
+#!/bin/sh
 
 if [ ! -f "$1" ]
 then
