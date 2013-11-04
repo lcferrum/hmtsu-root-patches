@@ -8,7 +8,7 @@ Homepage: https://github.com/lcferrum/hmtsu-root-patches
 
 Package: filebox-rooted
 Architecture: armel
-Depends: hmtsu (>= 0.1.0), filebox (>= 0.1.0), busybox-devel-su
+Depends: hmtsu (>= 0.1.1), filebox (>= 0.1.0), busybox-devel-su
 Section: user/other
 Priority: optional
 Description: This patch allows to run Filebox app with root privileges.

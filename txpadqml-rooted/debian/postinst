@@ -40,7 +40,7 @@ else
 	CMDPART="--su-mode"
 fi
 
-COMMAND="Exec=invoker --type=d hmtsu -D /usr/share/applications/txpad.desktop -V 2 $CMDPART 'export LD_LIBRARY_PATH=\"$LD_LIBRARY_PATH:/opt/txpadqml/lib/\"; /opt/txpadqml/bin/txpad'"
+COMMAND="Exec=invoker --type=d hmtsu -fD /usr/share/applications/txpad.desktop -V 2 $CMDPART 'export LD_LIBRARY_PATH=\"$LD_LIBRARY_PATH:/opt/txpadqml/lib/\"; /opt/txpadqml/bin/txpad'"
 
 sed "s,^Exec=.*,$COMMAND," /usr/share/applications/txpad-rooted.desktop > /usr/share/applications/txpad-rooted.tmp
 mv /usr/share/applications/txpad-rooted.tmp /usr/share/applications/txpad-rooted.desktop

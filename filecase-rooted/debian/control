@@ -8,7 +8,7 @@ Homepage: https://github.com/lcferrum/hmtsu-root-patches
 
 Package: filecase-rooted
 Architecture: armel
-Depends: hmtsu (>= 0.1.0), filecase (>= 0.1.9), busybox-devel-su
+Depends: hmtsu (>= 0.1.1), filecase (>= 0.1.9), busybox-devel-su
 Section: user/other
 Priority: optional
 Description: This patch allows to run FileCase app with root privileges.

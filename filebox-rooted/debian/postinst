@@ -40,7 +40,7 @@ else
 	CMDPART="--su-mode"
 fi
 
-COMMAND="Exec=invoker --type=d hmtsu $CMDPART -D /usr/share/applications/Filebox.desktop /opt/Filebox/bin/Filebox"
+COMMAND="Exec=invoker --type=d hmtsu $CMDPART -fD /usr/share/applications/Filebox.desktop"
 
 sed "s,^Exec=.*,$COMMAND," /usr/share/applications/Filebox-rooted.desktop > /usr/share/applications/Filebox-rooted.tmp
 mv /usr/share/applications/Filebox-rooted.tmp /usr/share/applications/Filebox-rooted.desktop
