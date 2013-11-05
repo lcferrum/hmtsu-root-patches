@@ -41,5 +41,3 @@ sed -i "s/template_app_pname/$APP_PNAME/" "$WORKING_DIR/$PATCH_PNAME/debian/post
 sed -i "s/template_patch_pname/$PATCH_PNAME/" "$WORKING_DIR/$PATCH_PNAME/debian/postinst"
 sed -i "s/template_app_dname/$APP_DNAME/" "$WORKING_DIR/$PATCH_PNAME/debian/postinst"
 sed -i "s/template_patch_dname/$PATCH_DNAME/g" "$WORKING_DIR/$PATCH_PNAME/debian/postinst"
-
-
