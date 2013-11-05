@@ -8,7 +8,7 @@ Homepage: https://github.com/lcferrum/hmtsu-root-patches
 
 Package: meego-root-terminal
 Architecture: armel
-Depends: hmtsu (>= 0.1.0), meego-terminal (>= 0.2.2), opensudo | inception-bin (>= 0.2.0)
+Depends: hmtsu (>= 0.1.1), meego-terminal (>= 0.2.2), opensudo | inception-bin (>= 0.2.0)
 Section: user/other
 Priority: optional
 Description: This patch allows to run Terminal app with root privileges.

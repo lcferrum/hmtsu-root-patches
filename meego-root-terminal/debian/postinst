@@ -7,7 +7,7 @@ else
 	CMDPART="--sudo-mode -l"
 fi
 
-COMMAND="Exec=invoker --type=d hmtsu $CMDPART -D /usr/share/applications/meego-terminal.desktop -- /usr/bin/meego-terminal -n"
+COMMAND="Exec=invoker --type=d hmtsu $CMDPART -fD /usr/share/applications/meego-terminal.desktop -- /usr/bin/meego-terminal -n"
 
 sed "s,^Exec=.*,$COMMAND," /usr/share/applications/meego-root-terminal.desktop > /usr/share/applications/meego-root-terminal.tmp
 mv /usr/share/applications/meego-root-terminal.tmp /usr/share/applications/meego-root-terminal.desktop
