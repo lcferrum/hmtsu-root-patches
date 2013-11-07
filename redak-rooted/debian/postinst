@@ -40,7 +40,7 @@ else
 	CMDPART="--su-mode"
 fi
 
-COMMAND="Exec=invoker --type=d hmtsu $CMDPART -D /usr/share/applications/redak_harmattan.desktop /opt/redak/bin/redak"
+COMMAND="Exec=invoker --type=d hmtsu $CMDPART -fD /usr/share/applications/redak_harmattan.desktop"
 
 sed "s,^Exec=.*,$COMMAND," /usr/share/applications/redak_harmattan-rooted.desktop > /usr/share/applications/redak_harmattan-rooted.tmp
 mv /usr/share/applications/redak_harmattan-rooted.tmp /usr/share/applications/redak_harmattan-rooted.desktop

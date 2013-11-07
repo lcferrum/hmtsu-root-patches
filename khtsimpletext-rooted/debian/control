@@ -8,7 +8,7 @@ Homepage: https://github.com/lcferrum/hmtsu-root-patches
 
 Package: khtsimpletext-rooted
 Architecture: armel
-Depends: hmtsu (>= 0.1.0), khtsimpletext (>= 2.4.1), busybox-devel-su
+Depends: hmtsu (>= 0.1.1), khtsimpletext (>= 2.4.1), busybox-devel-su
 Section: user/other
 Priority: optional
 Description: This patch allows to run SimpleText app with root privileges.

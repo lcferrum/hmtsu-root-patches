@@ -40,7 +40,7 @@ else
 	CMDPART="--su-mode"
 fi
 
-COMMAND="Exec=invoker --type=d hmtsu $CMDPART -D /usr/share/applications/khtsimpletext.desktop /opt/khtsimpletext/__init__.py"
+COMMAND="Exec=invoker --type=d hmtsu $CMDPART -fD /usr/share/applications/khtsimpletext.desktop"
 
 sed "s,^Exec=.*,$COMMAND," /usr/share/applications/khtsimpletext-rooted.desktop > /usr/share/applications/khtsimpletext-rooted.tmp
 mv /usr/share/applications/khtsimpletext-rooted.tmp /usr/share/applications/khtsimpletext-rooted.desktop
